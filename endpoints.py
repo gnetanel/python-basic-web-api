@@ -71,9 +71,9 @@ def makeANewPuppy(name, description):
 
 def updatePuppy(id, name, description):
     puppy = session.query(Puppy).filter_by(id=id).one()
-    if not name:
+    if name:
         puppy.name = name
-    if not description:
+    if description:
         puppy.description = description
     session.add(puppy)
     session.commit()
